@@ -3,27 +3,31 @@ title: "Lyrion Players"
 description: Player provider for devices managed by Lyrion
 ---
 
-# Lyrion Players
+# Lyrion Players <img src="/assets/icons/lyrion.png" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-This provider discovers and controls players that are already managed by a Lyrion LMS server.
+Music Assistant has support for players managed by a [Lyrion Music Server](https://lyrion.org/). This provider discovers and controls players that are already known to a Lyrion server, including native queue sync and player grouping.
+
+This provider is designed to be used together with [Lyrion Music Library](/music-providers/lyrion-music/), and that combination is recommended. Lyrion Players handles player control and queue behavior, while Lyrion Music Library handles catalog and metadata.
 
 Shared setup details are on [Lyrion](/music-providers/lyrion/).
 
-## What to expect
+## Features
 
-- Discovers players known by Lyrion.
-- Supports play, pause, stop, seek, next/previous, volume, mute and power.
-- Supports native Lyrion-style player grouping.
-- Mirrors queue updates between Music Assistant and Lyrion.
+- Discovers players known by Lyrion
+- Supports basic playback controls such as play, pause, seek, next/previous, volume, mute, and power
+- Supports native Lyrion-style player grouping
+- Mirrors queue updates between Music Assistant and Lyrion
+- Works with mixed LMS-native and Music Assistant playback sources
 
-## Setup
+## Configuration
 
-1. Go to **Settings -> Player Providers -> Add a player provider**.
+1. Go to **Settings → Player Providers → Add a player provider**.
 2. Select `Lyrion Players`.
-3. Enter Lyrion host and JSON-RPC port (usually `9000`).
+3. Enter the Lyrion host and JSON-RPC port (usually `9000`).
 4. Save and wait for discovery.
 
 If players do not appear, make sure those players are connected to the same Lyrion instance.
+If discovery still fails, verify the host and port on the shared [Lyrion](https://lyrion.org/) server and check the network path from Music Assistant.
 
 ## Why this pairs with Lyrion Music Library
 
@@ -31,7 +35,8 @@ If players do not appear, make sure those players are connected to the same Lyri
 
 That pairing lets Music Assistant preserve more Lyrion-native queue behavior for Lyrion library tracks, while still handling non-Lyrion sources through Music Assistant streams.
 
-## Notes
+## Known Issues / Notes
 
-- Status is experimental.
 - Very large queues are guarded: queue mirroring is skipped above 500 items.
+- Host and port values shown after setup are read-only and come from the saved setup flow.
+- This provider works best when the players are managed by the same Lyrion server as the music library.

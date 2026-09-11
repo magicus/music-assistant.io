@@ -3,7 +3,10 @@ title: "Lyrion"
 description: Shared setup notes for the Lyrion Music Library and Lyrion Players providers
 ---
 
-# Lyrion
+# Lyrion <img src="/assets/icons/lyrion.png" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+
+[Lyrion](https://lyrion.org/) is a self-hosted music server platform (formerly Logitech Media Server).
+In this documentation, Lyrion means that server platform.
 
 Use this page as the shared setup reference for:
 
@@ -18,6 +21,8 @@ Music Assistant splits library and player control into separate provider types.
 - `lyrion_player` is a player provider (discover/control players, queue sync, grouping).
 
 This is why both exist even though they connect to the same Lyrion LMS server.
+
+For most users, the best experience is to run both providers together.
 
 ## Before you add them
 
