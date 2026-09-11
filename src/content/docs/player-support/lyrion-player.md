@@ -14,7 +14,7 @@ Shared setup details are on [Lyrion](/music-providers/lyrion/).
 ## Features
 
 - Discovers players known by Lyrion
-- Supports basic playback controls such as play, pause, seek, next/previous, volume, mute, and power
+- Supports all standard playback controls such as play, pause, seek, next/previous, volume, mute, and power
 - Supports native Lyrion-style player grouping
 - Mirrors queue updates between Music Assistant and Lyrion
 - Works with mixed LMS-native and Music Assistant playback sources
