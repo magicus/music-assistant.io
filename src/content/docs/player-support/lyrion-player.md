@@ -7,9 +7,7 @@ description: Player provider for devices managed by Lyrion
 
 Music Assistant has support for players managed by a [Lyrion Music Server](https://lyrion.org/). This provider discovers and controls players that are already known to a Lyrion server, including native queue sync and player grouping.
 
-This provider is designed to be used together with [Lyrion Music Library](/music-providers/lyrion-music/), and that combination is recommended. Lyrion Players handles player control and queue behavior, while Lyrion Music Library handles catalog and metadata.
-
-Shared setup details are on [Lyrion](/music-providers/lyrion/).
+If your library is also in Lyrion, add [Lyrion Music Library](/music-providers/lyrion-music/) too. That combination is recommended.
 
 ## Features
 
@@ -27,16 +25,8 @@ Shared setup details are on [Lyrion](/music-providers/lyrion/).
 4. Save and wait for discovery.
 
 If players do not appear, make sure those players are connected to the same Lyrion instance.
-If discovery still fails, verify the host and port on the shared [Lyrion](https://lyrion.org/) server and check the network path from Music Assistant.
-
-## Why this pairs with Lyrion Music Library
-
-`Lyrion Players` can play content from any Music Assistant source, but it works best together with [Lyrion Music Library](/music-providers/lyrion-music/) when your catalog also lives in Lyrion.
-
-That pairing lets Music Assistant preserve more Lyrion-native queue behavior for Lyrion library tracks, while still handling non-Lyrion sources through Music Assistant streams.
+If Music Assistant cannot reach Lyrion, check that the host/port is correct and that network/firewall rules allow access to port `9000` (or your custom port).
 
 ## Known Issues / Notes
 
-- Very large queues are guarded: queue mirroring is skipped above 500 items.
-- Host and port values shown after setup are read-only and come from the saved setup flow.
-- This provider works best when the players are managed by the same Lyrion server as the music library.
+- Play queue mirroring is skipped if the queue contains more than 500 items.

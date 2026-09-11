@@ -7,9 +7,7 @@ description: Music source provider for Lyrion libraries
 
 Music Assistant has support for the [Lyrion Music Server](https://lyrion.org/) library as a music source. This provider connects Music Assistant to an existing Lyrion LMS server and imports the music catalog, metadata, browse structure, and track URLs needed for playback.
 
-This provider is designed to be used together with [Lyrion Players](/player-support/lyrion-player/), and that combination is recommended. Lyrion Music Library handles catalog and metadata, while Lyrion Players handles player control.
-
-Shared setup details are on [Lyrion](/music-providers/lyrion/).
+If you also use Lyrion-managed players, add [Lyrion Players](/player-support/lyrion-player/) too. That combination is recommended for the best Lyrion-native playback behavior.
 
 ## Features
 
@@ -41,13 +39,7 @@ Shared setup details are on [Lyrion](/music-providers/lyrion/).
 3. Enter the Lyrion host and JSON-RPC port (usually `9000`).
 4. Finish setup and run a library sync.
 
-## Works best with Lyrion Players
-
-You can use this source with any Music Assistant player provider.
-
-If you also use Lyrion-managed players, add [Lyrion Players](/player-support/lyrion-player/) as well. That lets Music Assistant and Lyrion keep queue metadata and playback behavior aligned more closely.
-
-Without Lyrion Players, playback still works through other player providers, but you lose Lyrion-native player behavior.
+If Music Assistant cannot reach Lyrion, check that the host/port is correct and that network/firewall rules allow access to port `9000` (or your custom port).
 
 ## Provider setting
 
@@ -56,5 +48,5 @@ Without Lyrion Players, playback still works through other player providers, but
 ## Known Issues / Notes
 
 - This provider reads what Lyrion has indexed. If content is missing, rescan or update the library in Lyrion first.
+- If you change existing artwork in Lyrion, you must run `Rescan artwork now` to refresh it in Music Assistant. (Just adding new items does not require this.)
 - Large libraries are browsed in pages, so seeing `Next Page` in browse views is expected.
-- This source is best paired with [Lyrion Players](/player-support/lyrion-player/) if your players are managed by the same Lyrion server.
